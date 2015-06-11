@@ -6,4 +6,4 @@ client = Zulip::Client.new do |config|
 end
 
 stream, topic, msg = ARGV.join(' ').split("|")
-client.send_message(stream, topic,msg)
+client.send_message(topic, msg, stream)
