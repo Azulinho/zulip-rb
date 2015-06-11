@@ -5,6 +5,6 @@ client = Zulip::Client.new do |config|
   config.api_key = ENV['ZULIP_API_KEY']
 end
 
-puts "<email>|<msg>"
+puts "<email>|<msg><CTRL-D>"
 email, msg = STDIN.read.split("|")
 client.send_private_message(msg, email)
