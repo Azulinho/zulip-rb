@@ -12,7 +12,7 @@ client.stream_messages do |msg|
     puts "#{msg.sender_email.yellow} -> [#{msg.stream.cyan}] #{msg.subject.green}:"
     puts "#{msg.content}"
   else
-    puts "#{msg.sender_email.yellow} -> [#{'PRIVATE MESSAGE'.red}] #{msg.subject.green}:"
-    puts "#{msg.content.cyan}"
+    puts "#{msg.sender_email.light_magenta} -> [#{'PRIVATE MESSAGE'.light_red}] #{msg.subject.green}:"
+    puts "#{msg.content.light_yellow}"
   end
 end
