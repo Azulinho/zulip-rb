@@ -5,6 +5,5 @@ client = Zulip::Client.new do |config|
   config.api_key = ENV['ZULIP_API_KEY']
 end
 
-puts "<stream>|<topic>|<msg><CTRL-D>"
-stream, topic, msg = STDIN.read.split("|")
+stream, topic, msg = ARGV.join(' ').read.split("|")
 client.send_message(stream, topic,msg)

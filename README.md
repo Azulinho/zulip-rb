@@ -73,18 +73,14 @@ bundle exec ruby zulip-stream
 Send messages to a stream:
 
 ```bash
-bundle exec ruby zsm
+bundle exec ruby zsm 'stream|topic|msg thingy'
 ```
 
 Send a private message:
 
 ```bash
-bundle exec ruby zpm
+bundle exec ruby zpm 'email@address|msg thingy'
 ```
-
-
-
-
 
 
 ### Contributing

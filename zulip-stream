@@ -7,6 +7,12 @@ client = Zulip::Client.new do |config|
 end
 
 client.stream_messages do |msg|
-  puts "#{msg.sender_email.yellow} -> [#{msg.stream.red}] #{msg.subject.green}:"
-  puts "#{msg.content}"
+
+  if msg.display_recipient.is_a? String
+    puts "#{msg.sender_email.yellow} -> [#{msg.stream.cyan}] #{msg.subject.green}:"
+    puts "#{msg.content}"
+  else
+    puts "#{msg.sender_email.yellow} -> [#{'PRIVATE MESSAGE'.red}] #{msg.subject.green}:"
+    puts "#{msg.content.cyan}"
+  end
 end
