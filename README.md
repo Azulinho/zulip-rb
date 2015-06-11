@@ -62,6 +62,31 @@ List users:
 client.get_users
 ```
 
+### Command line clients
+
+read messages in a continuous stream:
+
+```bash
+bundle exec ruby zulip-stream
+```
+
+Send messages to a stream:
+
+```bash
+bundle exec ruby zsm
+```
+
+Send a private message:
+
+```bash
+bundle exec ruby zpm
+```
+
+
+
+
+
+
 ### Contributing
 
 1. Fork it
@@ -74,3 +99,5 @@ Some areas that could use contributions:
 
 1. Error handling
 2. Add unsubscribing from a stream
+
+

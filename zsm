@@ -1,0 +1,10 @@
+require 'zulip'
+
+client = Zulip::Client.new do |config|
+  config.email_address = ENV['ZULIP_USERNAME']
+  config.api_key = ENV['ZULIP_API_KEY']
+end
+
+puts "<stream>|<topic>|<msg>"
+stream, topic, msg = STDIN.read.split("|")
+client.send_message(stream, topic,msg)

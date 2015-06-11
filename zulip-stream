@@ -1,0 +1,12 @@
+require 'zulip'
+require 'colorize'
+
+client = Zulip::Client.new do |config|
+  config.email_address = ENV['ZULIP_USERNAME']
+  config.api_key = ENV['ZULIP_API_KEY']
+end
+
+client.stream_messages do |msg|
+  puts "#{msg.sender_email.yellow} -> [#{msg.stream.red}] #{msg.subject.green}:"
+  puts "#{msg.content}"
+end
